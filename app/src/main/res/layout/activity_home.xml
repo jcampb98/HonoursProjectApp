@@ -16,12 +16,15 @@
         android:id="@+id/buttonLogout" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/grant_permission_message"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="65dp"
-        android:ems="10"
-        android:text="Welcome to the App!!!"/>
+        android:padding="16dp"
+        android:text="@string/permission_message"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/exitButton"
