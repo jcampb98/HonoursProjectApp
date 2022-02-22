@@ -54,9 +54,4 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         AlertDialog alert = builder.create();
         alert.show();
     }
-
-    public void bootReceiver(Context context, Intent intent) {
-        Intent i = new Intent(context, ScreenTimeBroadcastReceiver.class);
-        context.startService(i);
-    }
 }
