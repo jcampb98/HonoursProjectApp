@@ -15,22 +15,14 @@
         android:layout_marginTop="125dp"
         android:id="@+id/buttonLogout" />
 
-    <TextView
-        android:id="@+id/grant_permission_message"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="@string/permission_message"
-        android:gravity="center"
-        android:layout_centerInParent="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-        android:visibility="gone" />
-
     <Button
-        android:id="@+id/exitButton"
+        android:text="Get App Usage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Press to Exit"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="125dp"
+        android:layout_below="@id/buttonLogout"
+        android:id="@+id/stats_btn" />
 
 </RelativeLayout>
