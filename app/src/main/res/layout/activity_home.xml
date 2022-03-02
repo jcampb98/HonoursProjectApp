@@ -6,14 +6,15 @@
     android:layout_height="match_parent"
     tools:context="com.razormist.simpleregistrationandloginapplication.Home">
 
-    <Button
-        android:text="Logout"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/permission_description_tv"
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="125dp"
-        android:id="@+id/buttonLogout" />
+        android:padding="20dp"
+        android:textAlignment="center"
+        android:text="@string/permission_description"
+        android:gravity="center_horizontal" />
 
     <Button
         android:text="Get App Usage"
@@ -22,7 +23,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="200dp"
-        android:layout_below="@id/buttonLogout"
         android:id="@+id/show_stats_btn" />
 
     <Button

@@ -35,8 +35,8 @@ import static android.app.AppOpsManager.OPSTR_GET_USAGE_STATS;
 
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class Home extends AppCompatActivity {
-    Button enableBtn,logout, show_statsBtn;
-    TextView usageTv;
+    Button enableBtn, logout, show_statsBtn;
+    TextView usageTv, permissionDescriptionTv;
     ListView appsList;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -49,6 +49,7 @@ public class Home extends AppCompatActivity {
         show_statsBtn = (Button) findViewById(R.id.show_stats_btn);
         enableBtn = (Button) findViewById(R.id.enable_btn);
         usageTv = (TextView) findViewById(R.id.usage_tv);
+        permissionDescriptionTv = (TextView) findViewById(R.id.permission_description_tv);
         appsList = (ListView) findViewById(R.id.apps_list);
 
         this.loadStatistics();
@@ -60,9 +61,11 @@ public class Home extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         if (getGrantStatus()) {
+            showHideWithPermission();
             show_statsBtn.setOnClickListener(view -> loadStatistics());
         }
         else {
+            showHideNoPermission();
             enableBtn.setOnClickListener(view -> {
                 startActivity(new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS));
             });
@@ -126,7 +129,7 @@ public class Home extends AppCompatActivity {
     public void showAppsUsage(Map<String, UsageStats> mySortedMap) {
         //public void showAppsUsage(List<UsageStats> usageStatsList) {
         ArrayList<App> appsList = new ArrayList<>();
-        ArrayList<UsageStats> usageStatsList = new ArrayList<>(mySortedMap.values());
+        List<UsageStats> usageStatsList = new ArrayList<>(mySortedMap.values());
 
         // sort the applications by time spent in foreground
         Collections.sort(usageStatsList, (z1, z2) -> Long.compare(z1.getTotalTimeInForeground(), z2.getTotalTimeInForeground()));
@@ -167,6 +170,8 @@ public class Home extends AppCompatActivity {
         // attach the adapter to a ListView
         ListView listView = (ListView) findViewById(R.id.apps_list);
         listView.setAdapter(adapter);
+
+        showHideItemsWhenShowApps();
     }
 
     /**
@@ -215,5 +220,40 @@ public class Home extends AppCompatActivity {
         } catch (PackageManager.NameNotFoundException e) {
             return false;
         }
+    }
+
+    /**
+     * helper method used to show/hide items in the view when  PACKAGE_USAGE_STATS permission is not allowed
+     */
+    public void showHideNoPermission() {
+        enableBtn.setVisibility(View.VISIBLE);
+        permissionDescriptionTv.setVisibility(View.VISIBLE);
+        show_statsBtn.setVisibility(View.GONE);
+        usageTv.setVisibility(View.GONE);
+        appsList.setVisibility(View.GONE);
+
+    }
+
+    /**
+     * helper method used to show/hide items in the view when  PACKAGE_USAGE_STATS permission allowed
+     */
+    public void showHideWithPermission() {
+        enableBtn.setVisibility(View.GONE);
+        permissionDescriptionTv.setVisibility(View.GONE);
+        show_statsBtn.setVisibility(View.VISIBLE);
+        usageTv.setVisibility(View.GONE);
+        appsList.setVisibility(View.GONE);
+    }
+
+    /**
+     * helper method used to show/hide items in the view when showing the apps list
+     */
+    public void showHideItemsWhenShowApps() {
+        enableBtn.setVisibility(View.GONE);
+        permissionDescriptionTv.setVisibility(View.GONE);
+        show_statsBtn.setVisibility(View.GONE);
+        usageTv.setVisibility(View.VISIBLE);
+        appsList.setVisibility(View.VISIBLE);
+
     }
 }
