@@ -45,14 +45,14 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        logout = (Button) findViewById(R.id.buttonLogout);
+        //logout = (Button) findViewById(R.id.buttonLogout);
         show_statsBtn = (Button) findViewById(R.id.show_stats_btn);
         enableBtn = (Button) findViewById(R.id.enable_btn);
         usageTv = (TextView) findViewById(R.id.usage_tv);
         permissionDescriptionTv = (TextView) findViewById(R.id.permission_description_tv);
         appsList = (ListView) findViewById(R.id.apps_list);
 
-        this.loadStatistics();
+        this.loadAppStatistics();
     }
 
     // each time the application gets in foreground -> getGrantStatus and render the corresponding buttons
@@ -60,9 +60,9 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if (getGrantStatus()) {
+        if (getGrantPermStatus()) {
             showHideWithPermission();
-            show_statsBtn.setOnClickListener(view -> loadStatistics());
+            show_statsBtn.setOnClickListener(view -> loadAppStatistics());
         }
         else {
             showHideNoPermission();
@@ -110,7 +110,7 @@ public class Home extends AppCompatActivity {
      * load the usage stats for last 24h
      */
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public void loadStatistics() {
+    public void loadAppStatistics() {
         UsageStatsManager usm = (UsageStatsManager) this.getSystemService(USAGE_STATS_SERVICE);
         List<UsageStats> appList = usm.queryUsageStats(UsageStatsManager.INTERVAL_DAILY,  System.currentTimeMillis() - 1000*3600*24,  System.currentTimeMillis());
         appList = appList.stream().filter(app -> app.getTotalTimeInForeground() > 0).collect(Collectors.toList());
@@ -125,6 +125,7 @@ public class Home extends AppCompatActivity {
         }
     }
 
+    //this code was adapted from https://medium.com/@afrinsulthana/building-an-app-usage-tracker-in-android-fe79e959ab26
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void showAppsUsage(Map<String, UsageStats> mySortedMap) {
         //public void showAppsUsage(List<UsageStats> usageStatsList) {
@@ -179,7 +180,7 @@ public class Home extends AppCompatActivity {
      * @return true if permission granted
      */
     @RequiresApi(api = Build.VERSION_CODES.M)
-    private boolean getGrantStatus() {
+    private boolean getGrantPermStatus() {
         AppOpsManager appOps = (AppOpsManager) getApplicationContext()
                 .getSystemService(Context.APP_OPS_SERVICE);
 
@@ -231,7 +232,6 @@ public class Home extends AppCompatActivity {
         show_statsBtn.setVisibility(View.GONE);
         usageTv.setVisibility(View.GONE);
         appsList.setVisibility(View.GONE);
-
     }
 
     /**
@@ -254,6 +254,5 @@ public class Home extends AppCompatActivity {
         show_statsBtn.setVisibility(View.GONE);
         usageTv.setVisibility(View.VISIBLE);
         appsList.setVisibility(View.VISIBLE);
-
     }
 }
