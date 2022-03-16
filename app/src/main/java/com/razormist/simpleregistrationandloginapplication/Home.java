@@ -72,40 +72,6 @@ public class Home extends AppCompatActivity {
         }
     }
 
-    /*
-    public void onClick(View v) {
-        //Checks for logout button
-        if(v == logout){
-            showtbDialog();
-        }
-    }
-
-
-    private void showtbDialog()
-    {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Are you sure you want to Logout??");
-        builder.setCancelable(false);
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id)
-            {
-                Toast.makeText(getApplicationContext(), "You Pressed Yes", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(getApplicationContext(), Login.class);
-                startActivity(i);
-            }
-        });
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id)
-            {
-                Toast.makeText(getApplicationContext(), "You Pressed No", Toast.LENGTH_SHORT).show();
-                dialog.cancel();
-            }
-        });
-        AlertDialog alert = builder.create();
-        alert.show();
-    }
-    */
-
     /**
      * load the usage stats for last 24h
      */
@@ -143,7 +109,7 @@ public class Home extends AppCompatActivity {
             try {
                 String packageName;
                 packageName = usageStats.getPackageName();
-                Drawable icon = getDrawable(R.drawable.no_images);
+                Drawable icon = getDrawable(R.drawable.no_image);
                 String[] packageNames = packageName.split("\\.");
                 String appName = packageNames[packageNames.length-1].trim();
 

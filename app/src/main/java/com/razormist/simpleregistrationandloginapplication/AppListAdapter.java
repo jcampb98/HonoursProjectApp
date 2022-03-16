@@ -10,7 +10,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class AppListAdapter extends ArrayAdapter<App> {
     public AppListAdapter(Context context, ArrayList<App> usageStatDTOArrayList) {
@@ -39,6 +38,7 @@ public class AppListAdapter extends ArrayAdapter<App> {
         app_name_tv.setText(usageStats.appName);
         usage_duration_tv.setText(usageStats.usageDuration);
         usage_perc_tv.setText(usageStats.usagePercentage + "%");
+        icon_img.setImageDrawable(usageStats.appIcon);
         progressBar.setProgress(usageStats.usagePercentage);
 
         // Return the completed view to render on screen
