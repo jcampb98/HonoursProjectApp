@@ -46,25 +46,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="50dp"
         android:ems="10"
         android:text="Register"
         android:layout_below="@+id/et_cpassword" />
+
+    <TextView
+        android:id="@+id/loginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:text="Click here to login if you already have an account"
+        android:layout_below="@+id/btn_register"/>
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:text="Login"
-        android:layout_below="@+id/btn_register" />
-
-    <Button
-        android:id="@+id/exitButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Press to Exit"
-        android:layout_alignParentBottom="true" />
+        android:layout_below="@+id/loginText" />
 
 </RelativeLayout>

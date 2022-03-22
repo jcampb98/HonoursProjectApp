@@ -38,20 +38,26 @@
         android:ems="10"
         android:text="Login"/>
 
-    <Button
-        android:id="@+id/btn_lregister"
+    <TextView
+        android:id="@+id/googleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:paddingLeft="50dp"
         android:ems="10"
-        android:text="Register"/>
+        android:text="------ or ------"
+        android:layout_below="@+id/btn_llogin"/>
 
     <Button
-        android:id="@+id/exitButton"
+        android:id="@+id/googleButton"
+        android:drawableLeft="@drawable/ic_google_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Press to Exit" />
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:text="Sign in through Google"
+        android:layout_below="@+id/googleText" />
 
 
 </RelativeLayout>
