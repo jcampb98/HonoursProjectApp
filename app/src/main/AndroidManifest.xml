@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.razormist.simpleregistrationandloginapplication">
+    package="com.razormist.honoursproject">
 
     <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"
         tools:ignore="ProtectedPermissions" />
@@ -37,7 +37,7 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme">
             <intent-filter>
-                <action android:name="com.razormist.simpleregistrationandloginapplication.Login" />
+                <action android:name="com.razormist.honoursproject.Login" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

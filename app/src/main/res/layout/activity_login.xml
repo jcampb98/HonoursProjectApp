@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.razormist.simpleregistrationandloginapplication.Login">
+    tools:context="com.razormist.honoursproject.Login">
 
     <EditText
         android:id="@+id/et_lusername"
@@ -39,25 +39,24 @@
         android:text="Login"/>
 
     <TextView
-        android:id="@+id/googleText"
+        android:id="@+id/registerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
         android:paddingLeft="50dp"
         android:ems="10"
-        android:text="------ or ------"
+        android:text="Click here to register if you don't have an account"
         android:layout_below="@+id/btn_llogin"/>
 
     <Button
-        android:id="@+id/googleButton"
-        android:drawableLeft="@drawable/ic_google_icon"
+        android:id="@+id/btn_lregister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:ems="10"
-        android:text="Sign in through Google"
-        android:layout_below="@+id/googleText" />
+        android:text="Register"
+        android:layout_below="@+id/registerText" />
 
 
 </RelativeLayout>

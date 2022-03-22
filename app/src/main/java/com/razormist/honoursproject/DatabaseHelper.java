@@ -1,4 +1,4 @@
-package com.razormist.simpleregistrationandloginapplication;
+package com.razormist.honoursproject;
 
 import android.content.ContentValues;
 import android.content.Context;

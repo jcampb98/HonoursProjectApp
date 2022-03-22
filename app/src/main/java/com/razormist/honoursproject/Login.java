@@ -1,4 +1,4 @@
-package com.razormist.simpleregistrationandloginapplication;
+package com.razormist.honoursproject;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
-    Button btn_lregister, btn_llogin;
+    Button btn_llogin, btn_lregister;
     EditText et_lusername, et_lpassword;
 
     DatabaseHelper databaseHelper;
@@ -24,8 +24,8 @@ public class Login extends AppCompatActivity {
         et_lpassword = (EditText)findViewById(R.id.et_lpassword);
 
         btn_llogin = (Button)findViewById(R.id.btn_llogin);
-        btn_lregister = (Button)findViewById(R.id.btn_lregister);
 
+        btn_lregister = (Button) findViewById(R.id.btn_lregister);
         btn_lregister.setOnClickListener(v -> {
             Intent intent = new Intent(Login.this, MainActivity.class);
             startActivity(intent);

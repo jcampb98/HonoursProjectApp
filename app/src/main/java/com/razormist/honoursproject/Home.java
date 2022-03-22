@@ -1,11 +1,10 @@
-package com.razormist.simpleregistrationandloginapplication;
+package com.razormist.honoursproject;
 
 
 import android.app.AppOpsManager;
 import android.app.usage.UsageStats;
 import android.app.usage.UsageStatsManager;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -14,13 +13,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.RequiresApi;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,7 +32,7 @@ import static android.app.AppOpsManager.OPSTR_GET_USAGE_STATS;
 
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class Home extends AppCompatActivity {
-    Button enableBtn, logout, show_statsBtn;
+    Button enableBtn, show_statsBtn;
     TextView usageTv, permissionDescriptionTv;
     ListView appsList;
 
