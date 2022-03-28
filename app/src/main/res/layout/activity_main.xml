@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context="com.razormist.honoursproject.MainActivity">
 
+    <TextView
+        android:id="@+id/registerPageLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:text="Registration"/>
 
     <EditText
         android:id="@+id/et_username"
@@ -16,6 +27,7 @@
         android:layout_marginTop="65dp"
         android:ems="10"
         android:inputType="text"
+        android:drawableLeft="@drawable/ic_baseline_account_circle_24"
         android:hint="Username"/>
 
 
@@ -28,6 +40,7 @@
         android:ems="10"
         android:layout_below="@+id/et_username"
         android:inputType="textPassword"
+        android:drawableLeft="@drawable/ic_baseline_info_24"
         android:hint="Password"/>
 
     <EditText
@@ -39,6 +52,7 @@
         android:ems="10"
         android:layout_below="@+id/et_password"
         android:inputType="textPassword"
+        android:drawableLeft="@drawable/ic_baseline_info_24"
         android:hint="Confirm Password"/>
 
     <Button
@@ -49,6 +63,8 @@
         android:layout_marginTop="50dp"
         android:ems="10"
         android:text="Register"
+        android:textColor="#fff"
+        android:background="#4285f4"
         android:layout_below="@+id/et_cpassword" />
 
     <TextView
@@ -69,6 +85,8 @@
         android:layout_marginTop="20dp"
         android:ems="10"
         android:text="Login"
+        android:textColor="#fff"
+        android:background="#4285f4"
         android:layout_below="@+id/loginText" />
 
 </RelativeLayout>

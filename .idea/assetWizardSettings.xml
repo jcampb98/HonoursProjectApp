@@ -16,10 +16,25 @@
                   <entry key="vectorAssetStep">
                     <value>
                       <PersistentState>
+                        <option name="children">
+                          <map>
+                            <entry key="clipartAsset">
+                              <value>
+                                <PersistentState>
+                                  <option name="values">
+                                    <map>
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/info/baseline_info_24.xml" />
+                                    </map>
+                                  </option>
+                                </PersistentState>
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
                         <option name="values">
                           <map>
-                            <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_google_icon" />
+                            <entry key="color" value="6c8bed" />
+                            <entry key="outputName" value="ic_baseline_info_24" />
                             <entry key="sourceFile" value="C:\Users\Joshi\AndroidStudioProjects\HonoursProject\app\src\main\res\drawable\google-icon.svg" />
                           </map>
                         </option>

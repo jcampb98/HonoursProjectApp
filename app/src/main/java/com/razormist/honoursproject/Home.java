@@ -32,7 +32,7 @@ import static android.app.AppOpsManager.OPSTR_GET_USAGE_STATS;
 
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class Home extends AppCompatActivity {
-    Button enableBtn, show_statsBtn;
+    Button enableBtn, show_statsBtn, logout;
     TextView usageTv, permissionDescriptionTv;
     ListView appsList;
 
@@ -42,7 +42,7 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        //logout = (Button) findViewById(R.id.buttonLogout);
+        logout = (Button) findViewById(R.id.btnLogout);
         show_statsBtn = (Button) findViewById(R.id.show_stats_btn);
         enableBtn = (Button) findViewById(R.id.enable_btn);
         usageTv = (TextView) findViewById(R.id.usage_tv);

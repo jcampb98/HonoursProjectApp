@@ -23,18 +23,33 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="200dp"
+        android:textColor="#fff"
+        android:background="#4285f4"
         android:id="@+id/show_stats_btn" />
 
     <Button
         android:id="@+id/enable_btn"
         android:layout_width="150dp"
         android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
         android:textColor="#fff"
         android:background="#4285f4"
         android:layout_height="wrap_content"
         android:layout_below="@id/show_stats_btn"
         android:layout_marginTop="200dp"
         android:text="Enable Usage Stats Permission" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="150dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:textColor="#fff"
+        android:background="#4285f4"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/enable_btn"
+        android:layout_marginTop="150dp"
+        android:text="Logout" />
 
     <TextView
         android:id="@+id/usage_tv"
@@ -50,6 +65,7 @@
         android:visibility="gone"
         android:id="@+id/apps_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/usage_tv"/>
 
 </RelativeLayout>
