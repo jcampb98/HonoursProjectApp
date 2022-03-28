@@ -5,6 +5,7 @@ import android.app.AppOpsManager;
 import android.app.usage.UsageStats;
 import android.app.usage.UsageStatsManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -13,11 +14,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.RequiresApi;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -31,7 +34,7 @@ import static android.app.AppOpsManager.MODE_ALLOWED;
 import static android.app.AppOpsManager.OPSTR_GET_USAGE_STATS;
 
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-public class Home extends AppCompatActivity {
+public class Home extends AppCompatActivity implements View.OnClickListener {
     Button enableBtn, show_statsBtn, logout;
     TextView usageTv, permissionDescriptionTv;
     ListView appsList;
@@ -50,6 +53,31 @@ public class Home extends AppCompatActivity {
         appsList = (ListView) findViewById(R.id.apps_list);
 
         this.loadAppStatistics();
+    }
+
+    public void onClick(View v) {
+        //Checks for logout button
+        if(v == logout){
+            showtbDialog();
+        }
+    }
+
+    private void showtbDialog()
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Are you sure you want to Logout??"); //this prompts the user to ask if they want to logout
+        builder.setCancelable(false);
+        builder.setPositiveButton("Yes", (dialog, id) -> {
+            Toast.makeText(getApplicationContext(), "You Pressed Yes", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(getApplicationContext(), Login.class);
+            startActivity(i); //this takes the user back to the login page since they signed out
+        });
+        builder.setNegativeButton("No", (dialog, id) -> {
+            Toast.makeText(getApplicationContext(), "You Pressed No", Toast.LENGTH_SHORT).show();
+            dialog.cancel();
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
     // each time the application gets in foreground -> getGrantStatus and render the corresponding buttons
