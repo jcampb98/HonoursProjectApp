@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/HonoursProject.iml" filepath="$PROJECT_DIR$/.idea/modules/HonoursProject.iml" group="HonoursProject" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HonoursProjectApp.iml" filepath="$PROJECT_DIR$/.idea/modules/HonoursProjectApp.iml" group="HonoursProjectApp" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/HonoursProjectApp-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/HonoursProjectApp-app.iml" group="HonoursProjectApp/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="HonoursProject/app" />
     </modules>
   </component>
