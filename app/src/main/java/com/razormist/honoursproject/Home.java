@@ -35,7 +35,7 @@ import static android.app.AppOpsManager.OPSTR_GET_USAGE_STATS;
 
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class Home extends AppCompatActivity implements View.OnClickListener {
-    Button enableBtn, show_statsBtn, logout;
+    Button enableBtn, show_statsBtn, logout, signout;
     TextView usageTv, permissionDescriptionTv;
     ListView appsList;
 
